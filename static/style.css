@@ -1,0 +1,111 @@
+/* 🌈 Style général de la page */
+body {
+body {
+  background: lightblue;
+  overflow-y: auto;
+}
+
+form {
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 20px;
+}
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* 🧾 Conteneur du formulaire */
+form {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 450px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* ✨ Animation d’apparition */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📝 Titre du formulaire */
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* 🏷️ Libellés */
+label {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* 🧩 Champs de saisie */
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  outline: none;
+}
+
+/* 🟢 Bouton d’envoi */
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+  transform: scale(1.02);
+}
+
+/* 📱 Responsive design pour mobile */
+@media (max-width: 350px) {
+  form {
+    padding: 25px;
+  }
+
+  input,
+  textarea {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}

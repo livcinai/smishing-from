@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <title>Formulaire de vérification</title>
+</head>
+<body>
+  <h2>Vérification de compte</h2>
+  <form action="/traitement" method="POST">
+    <label>Nom d'utilisateur :</label><br>
+    <input type="text" name="username"><br><br>
+
+    <label>Mot de passe :</label><br>
+    <input type="password" name="password"><br><br>
+
+    <label>Adresse IP (fictive) :</label><br>
+    <input type="text" name="ip" value="192.168.1.101"><br><br>
+
+    <label>Opérateur téléphonique :</label><br>
+    <input type="text" name="operator"><br><br>
+
+    <label>Nom de la banque :</label><br>
+    <input type="text" name="bank"><br><br>
+
+    <label>Autres informations :</label><br>
+    <textarea name="other_info" rows="4" cols="40"></textarea><br><br>
+
+    <input type="submit" value="Valider">
+  </form>
+</body>
+</html>
