@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirmation</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <header>
+    <h1 class="secure-title">✅ Données envoyées avec succès</h1>
+    <p class="subtitle">Merci ! Vos informations ont été transmises en toute sécurité.</p>
+  </header>
+
+  <div class="logo-container">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo SecureForm" class="logo">
+  </div>
+
+  <div style="text-align:center; margin-top:40px;">
+    <a href="/" style="color:#2f80ed; font-weight:bold;">↩ Retour au formulaire</a>
+  </div>
+
+</body>
+</html>

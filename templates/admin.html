@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Données enregistrées</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <header>
+    <h1 class="secure-title">📊 Données enregistrées</h1>
+    <p class="subtitle">Filtrer par date ou télécharger toutes les données.</p>
+  </header>
+
+  <form method="POST" style="text-align:center; margin-top:20px;">
+    <label for="date">Filtrer par date (format AAAA-MM-JJ) :</label><br>
+    <input type="text" id="date" name="date" value="{{ selected_date }}" placeholder="2025-10-04">
+    <button type="submit">Filtrer</button>
+  </form>
+
+  <div style="text-align:center; margin-top:30px;">
+    <a href="{{ url_for('download') }}" style="color:#2f80ed; font-weight:bold;">📥 Télécharger les données</a>
+  </div>
+
+  <div style="max-width:700px; margin:40px auto; background:white; padding:20px; border-radius:8px;">
+    {% if data %}
+      <ul>
+        {% for line in data %}
+          <li>{{ line }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>Aucune donnée à afficher.</p>
+    {% endif %}
+  </div>
+
+</body>
+</html>
