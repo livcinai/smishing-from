@@ -4,6 +4,60 @@
   <meta charset="UTF-8">
   <title>Admin - Données enregistrées</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 30px;
+      background-color: #2f80ed;
+      color: white;
+    }
+    form {
+      text-align: center;
+      margin-top: 20px;
+    }
+    input[type="text"] {
+      padding: 8px;
+      width: 200px;
+      margin-right: 10px;
+    }
+    button {
+      padding: 8px 16px;
+      background-color: #2f80ed;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin: 5px;
+    }
+    button:hover {
+      background-color: #1c60c7;
+    }
+    .download-link {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .data-container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      padding: 8px;
+      border-bottom: 1px solid #eee;
+    }
+  </style>
 </head>
 <body>
 
@@ -12,17 +66,18 @@
     <p class="subtitle">Filtrer par date ou télécharger toutes les données.</p>
   </header>
 
-  <form method="POST" style="text-align:center; margin-top:20px;">
+  <form method="POST">
     <label for="date">Filtrer par date (format AAAA-MM-JJ) :</label><br>
-    <input type="text" id="date" name="date" value="{{ selected_date }}" placeholder="2025-10-04">
+    <input type="text" id="date" name="date" value="{{ selected_date }}" placeholder="2025-10-05">
     <button type="submit">Filtrer</button>
+    <button type="submit" name="date" value="">Afficher tout</button>
   </form>
 
-  <div style="text-align:center; margin-top:30px;">
+  <div class="download-link">
     <a href="{{ url_for('download') }}" style="color:#2f80ed; font-weight:bold;">📥 Télécharger les données</a>
   </div>
 
-  <div style="max-width:700px; margin:40px auto; background:white; padding:20px; border-radius:8px;">
+  <div class="data-container">
     {% if data %}
       <ul>
         {% for line in data %}
@@ -30,7 +85,7 @@
         {% endfor %}
       </ul>
     {% else %}
-      <p>Aucune donnée à afficher.</p>
+      <p style="text-align:center;">Aucune donnée à afficher.</p>
     {% endif %}
   </div>
 
